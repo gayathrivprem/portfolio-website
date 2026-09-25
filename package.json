@@ -1,0 +1,20 @@
+{
+  "name": "cia-portfolio",
+  "version": "1.0.0",
+  "description": "Modern developer portfolio ready for Vercel deployment",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "portfolio",
+    "developer",
+    "vercel",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "CIA",
+  "license": "MIT"
+}

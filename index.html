@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title id="page-title">CIA | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Single Clean Floating Customize Portfolio Button -->
+    <button class="floating-builder-btn" onclick="toggleBuilderDrawer()">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> <span>Customize Portfolio</span>
+    </button>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <!-- CREATIVE LOGO - CIA -->
+            <a href="#home" class="logo" id="display-logo">
+                <span class="logo-icon"><i class="fa-solid fa-code"></i></span>
+                <span class="logo-text">CIA<span class="logo-accent">.dev</span></span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="menu-icon" onclick="toggleMenu()">
+                ☰
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="home">
+
+        <div class="home-content">
+
+            <p class="hello">Hello, I'm</p>
+
+            <h1 id="display-name">Suni Terencia</h1>
+
+            <h2><span id="display-tagline">Aspiring Full Stack Developer</span></h2>
+
+            <p id="display-intro">
+                I'm a BCA student passionate about web development, programming and creating user-friendly digital experiences.
+            </p>
+
+            <div class="home-buttons">
+                <a href="#contact" class="btn">Contact Me</a>
+                <a href="#projects" class="btn secondary-btn">View Projects</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="about">
+
+        <div class="section-title">
+            <p>Get To Know Me</p>
+            <h2>About Me</h2>
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-content">
+
+                <h3 id="display-about-heading">I'm Suni Terencia</h3>
+
+                <p id="display-about-p1">
+                    I'm a BCA student and aspiring Full Stack Developer with a passion for creating responsive, user-friendly, and visually appealing web applications.
+                </p>
+
+                <p id="display-about-p2">
+                    I have a strong foundation in HTML, CSS, JavaScript, and Python, along with an interest in learning modern web development technologies.
+                </p>
+
+                <p id="display-about-p3">
+                    I enjoy turning ideas into practical projects, solving problems through code, and continuously improving my technical skills.
+                </p>
+
+                <p id="display-about-p4">
+                    My goal is to build a successful career in software development and contribute to meaningful projects while continuously learning and growing.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills" class="skills">
+
+        <div class="section-title">
+            <p>What I Know</p>
+            <h2>My Skills</h2>
+        </div>
+
+        <div class="skills-container" id="display-skills-container">
+            <!-- Dynamic skills rendered here -->
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects" class="projects">
+
+        <div class="section-title">
+            <p>My Work</p>
+            <h2>Projects</h2>
+        </div>
+
+        <div class="projects-container" id="display-projects-container">
+            <!-- Dynamic projects rendered here -->
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education" class="education">
+
+        <div class="section-title">
+            <p>My Academic Journey</p>
+            <h2>Education</h2>
+        </div>
+
+        <div class="education-container" id="display-education-container">
+            <!-- Dynamic education rendered here -->
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-title">
+            <p>Let's Connect</p>
+            <h2>Contact Me</h2>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Let's Work Together</h3>
+
+                <p>
+                    I'm interested in internship and career opportunities in software and web development.
+                </p>
+
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <p id="display-email"><a href="mailto:sunit[email protected]">sunit[email protected]</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Location</strong>
+                    <p id="display-location">Tamil Nadu, India</p>
+                </div>
+
+            </div>
+
+
+            <form class="contact-form" onsubmit="sendMessage(event)">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name (e.g. John Doe)"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email (e.g. [email protected])"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    rows="6"
+                    placeholder="Your Message (e.g. Hi, I would like to discuss a web project...)"
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © <span id="current-year">2026</span> <span id="display-footer-name">Suni Terencia</span>. All Rights Reserved.
+        </p>
+
+        <div class="social-links" id="display-socials">
+            <a href="#" id="display-github" target="_blank">GitHub</a>
+            <a href="#" id="display-linkedin" target="_blank">LinkedIn</a>
+            <a href="#" id="display-instagram" target="_blank">Instagram</a>
+        </div>
+
+    </footer>
+
+
+    <!-- ================= INTERACTIVE PORTFOLIO BUILDER DRAWER ================= -->
+    <div class="builder-drawer-overlay" id="builder-overlay" onclick="toggleBuilderDrawer()"></div>
+
+    <div class="builder-drawer" id="builder-drawer">
+        <div class="drawer-header">
+            <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Customize Portfolio</h3>
+            <button class="drawer-close-btn" onclick="toggleBuilderDrawer()">&times;</button>
+        </div>
+
+        <div class="drawer-body">
+            <p class="drawer-intro">✨ Enter your custom details below. Clear example placeholders are shown in every box!</p>
+
+            <!-- SECTION: BASIC INFO -->
+            <div class="form-section">
+                <h4>1. Basic Profile Info</h4>
+                
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="input-name" placeholder="e.g. John Doe" oninput="updateLivePortfolio()">
+                </div>
+
+                <div class="input-group">
+                    <label>Tagline / Role</label>
+                    <input type="text" id="input-tagline" placeholder="e.g. Web Developer" oninput="updateLivePortfolio()">
+                </div>
+
+                <div class="input-group">
+                    <label>Logo Brand Text</label>
+                    <input type="text" id="input-logo" placeholder="e.g. CIA" oninput="updateLivePortfolio()">
+                </div>
+
+                <div class="input-group">
+                    <label>Short Intro (Home Section)</label>
+                    <textarea id="input-intro" rows="3" placeholder="e.g. I build clean, fast, and easy-to-use websites and digital applications." oninput="updateLivePortfolio()"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION: ABOUT ME -->
+            <div class="form-section">
+                <h4>2. About Me Paragraphs</h4>
+                
+                <div class="input-group">
+                    <label>Paragraph 1 (Intro & Interest)</label>
+                    <textarea id="input-about-p1" rows="2" placeholder="e.g. Hi! I am a web developer who loves building websites and learning new skills." oninput="updateLivePortfolio()"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>Paragraph 2 (Technical Foundation)</label>
+                    <textarea id="input-about-p2" rows="2" placeholder="e.g. I work with HTML, CSS, JavaScript, and Python to create user-friendly web pages." oninput="updateLivePortfolio()"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>Paragraph 3 (Problem Solving)</label>
+                    <textarea id="input-about-p3" rows="2" placeholder="e.g. I enjoy turning creative ideas into real software projects and solving problems." oninput="updateLivePortfolio()"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label>Paragraph 4 (Career Goal)</label>
+                    <textarea id="input-about-p4" rows="2" placeholder="e.g. My goal is to work on exciting projects and help users with modern technology." oninput="updateLivePortfolio()"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION: SKILLS -->
+            <div class="form-section">
+                <div class="section-header-inline">
+                    <h4>3. Skills List</h4>
+                    <button type="button" class="add-item-btn" onclick="addSkillInput()"><i class="fa-solid fa-plus"></i> Add Skill</button>
+                </div>
+                <div id="skills-input-container">
+                    <!-- Dynamic skill input rows -->
+                </div>
+            </div>
+
+            <!-- SECTION: PROJECTS -->
+            <div class="form-section">
+                <div class="section-header-inline">
+                    <h4>4. Projects List</h4>
+                    <button type="button" class="add-item-btn" onclick="addProjectInput()"><i class="fa-solid fa-plus"></i> Add Project</button>
+                </div>
+                <div id="projects-input-container">
+                    <!-- Dynamic project input rows -->
+                </div>
+            </div>
+
+            <!-- SECTION: EDUCATION -->
+            <div class="form-section">
+                <div class="section-header-inline">
+                    <h4>5. Education Roadmap</h4>
+                    <button type="button" class="add-item-btn" onclick="addEduInput()"><i class="fa-solid fa-plus"></i> Add Education</button>
+                </div>
+                <div id="edu-input-container">
+                    <!-- Dynamic education input rows -->
+                </div>
+            </div>
+
+            <!-- SECTION: CONTACT & SOCIALS -->
+            <div class="form-section">
+                <h4>6. Contact & Social Links</h4>
+                
+                <div class="input-group">
+                    <label>Contact Email</label>
+                    <input type="email" id="input-email" placeholder="e.g. [email protected]" oninput="updateLivePortfolio()">
+                </div>
+
+                <div class="input-group">
+                    <label>Location</label>
+                    <input type="text" id="input-location" placeholder="e.g. New York, USA" oninput="updateLivePortfolio()">
+                </div>
+
+                <div class="input-group">
+                    <label>GitHub Profile URL</label>
+                    <input type="url" id="input-github" placeholder="e.g. https://github.com/johndoe" oninput="updateLivePortfolio()">
+                </div>
+
+                <div class="input-group">
+                    <label>LinkedIn Profile URL</label>
+                    <input type="url" id="input-linkedin" placeholder="e.g. https://linkedin.com/in/johndoe" oninput="updateLivePortfolio()">
+                </div>
+
+                <div class="input-group">
+                    <label>Instagram Profile URL</label>
+                    <input type="url" id="input-instagram" placeholder="e.g. https://instagram.com/johndoe" oninput="updateLivePortfolio()">
+                </div>
+            </div>
+        </div>
+
+        <div class="drawer-footer">
+            <button class="btn secondary-btn" onclick="clearAllInputsToPlaceholders()">
+                <i class="fa-solid fa-eraser"></i> Clear to Examples
+            </button>
+            <button class="btn" onclick="saveAndCloseDrawer()">
+                <i class="fa-solid fa-check"></i> Save & Done
+            </button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
