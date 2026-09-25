@@ -8,18 +8,23 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Poppins & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body data-theme="dark" data-color-theme="violet">
 
-    <!-- Single Clean Floating Customize Portfolio Button -->
-    <button class="floating-builder-btn" onclick="toggleBuilderDrawer()">
-        <i class="fa-solid fa-wand-magic-sparkles"></i> <span>Customize Portfolio</span>
-    </button>
+    <!-- Ambient Interactive Background Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Custom Glowing Mouse Cursor -->
+    <div id="custom-cursor"></div>
+    <div id="cursor-blur"></div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
 
     <!-- ================= NAVBAR ================= -->
 
@@ -41,8 +46,18 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-            <div class="menu-icon" onclick="toggleMenu()">
-                ☰
+            <!-- Navbar Actions & Big Top Customize Button -->
+            <div class="nav-actions">
+                <button class="top-builder-btn" onclick="toggleBuilderDrawer()">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Customize Portfolio</span>
+                </button>
+                <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    ☰
+                </div>
             </div>
 
         </nav>
@@ -55,7 +70,9 @@
 
         <div class="home-content">
 
-            <p class="hello">Hello, I'm</p>
+            <div class="hello-badge">
+                <i class="fa-solid fa-sparkles"></i> Hello & Welcome
+            </div>
 
             <h1 id="display-name">Suni Terencia</h1>
 
@@ -66,8 +83,12 @@
             </p>
 
             <div class="home-buttons">
-                <a href="#contact" class="btn">Contact Me</a>
-                <a href="#projects" class="btn secondary-btn">View Projects</a>
+                <a href="#contact" class="btn">
+                    <i class="fa-solid fa-paper-plane"></i> Contact Me
+                </a>
+                <a href="#projects" class="btn secondary-btn">
+                    <i class="fa-solid fa-code"></i> View Projects
+                </a>
             </div>
 
         </div>
@@ -86,7 +107,7 @@
 
         <div class="about-container">
 
-            <div class="about-content">
+            <div class="about-content glass-card">
 
                 <h3 id="display-about-heading">I'm Suni Terencia</h3>
 
@@ -172,28 +193,34 @@
 
         <div class="contact-container">
 
-            <div class="contact-info">
+            <div class="contact-info glass-card">
 
                 <h3>Let's Work Together</h3>
 
                 <p>
-                    I'm interested in internship and career opportunities in software and web development.
+                    I'm interested in internship and career opportunities in software and web development. Feel free to reach out!
                 </p>
 
                 <div class="contact-item">
-                    <strong>Email</strong>
-                    <p id="display-email"><a href="mailto:sunit[email protected]">sunit[email protected]</a></p>
+                    <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <strong>Email</strong>
+                        <p id="display-email"><a href="mailto:sunit[email protected]">sunit[email protected]</a></p>
+                    </div>
                 </div>
 
                 <div class="contact-item">
-                    <strong>Location</strong>
-                    <p id="display-location">Tamil Nadu, India</p>
+                    <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <strong>Location</strong>
+                        <p id="display-location">Tamil Nadu, India</p>
+                    </div>
                 </div>
 
             </div>
 
 
-            <form class="contact-form" onsubmit="sendMessage(event)">
+            <form class="contact-form glass-card" onsubmit="sendMessage(event)">
 
                 <input
                     type="text"
@@ -211,13 +238,13 @@
 
                 <textarea
                     id="message"
-                    rows="6"
+                    rows="5"
                     placeholder="Your Message (e.g. Hi, I would like to discuss a web project...)"
                     required
                 ></textarea>
 
                 <button type="submit" class="btn">
-                    Send Message
+                    <i class="fa-solid fa-paper-plane"></i> Send Message
                 </button>
 
             </form>
@@ -236,9 +263,9 @@
         </p>
 
         <div class="social-links" id="display-socials">
-            <a href="#" id="display-github" target="_blank">GitHub</a>
-            <a href="#" id="display-linkedin" target="_blank">LinkedIn</a>
-            <a href="#" id="display-instagram" target="_blank">Instagram</a>
+            <a href="#" id="display-github" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" id="display-linkedin" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" id="display-instagram" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
 
     </footer>
@@ -254,7 +281,50 @@
         </div>
 
         <div class="drawer-body">
-            <p class="drawer-intro">✨ Enter your custom details below. Clear example placeholders are shown in every box!</p>
+            <p class="drawer-intro">✨ Customization & Visual Effects Engine! Choose your color palette and edit content live.</p>
+
+            <!-- SECTION: THEME & COLOR PALETTE -->
+            <div class="form-section">
+                <h4>🎨 Visual Theme & Colors</h4>
+                
+                <div class="input-group">
+                    <label>Appearance Mode</label>
+                    <div class="theme-mode-switches">
+                        <button type="button" class="theme-mode-btn active" id="btn-mode-dark" onclick="setAppearanceMode('dark')">
+                            <i class="fa-solid fa-moon"></i> Dark Mode
+                        </button>
+                        <button type="button" class="theme-mode-btn" id="btn-mode-light" onclick="setAppearanceMode('light')">
+                            <i class="fa-solid fa-sun"></i> Light Mode
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Accent Color Palette</label>
+                    <div class="color-palette-grid">
+                        <button type="button" class="palette-swatch violet active" title="Cyber Violet" onclick="setColorTheme('violet')">
+                            <span class="swatch-color" style="background: linear-gradient(135deg, #7c3aed, #ec4899);"></span>
+                            <span class="swatch-name">Violet</span>
+                        </button>
+                        <button type="button" class="palette-swatch cyan" title="Ocean Aurora" onclick="setColorTheme('cyan')">
+                            <span class="swatch-color" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);"></span>
+                            <span class="swatch-name">Ocean</span>
+                        </button>
+                        <button type="button" class="palette-swatch sunset" title="Neon Sunset" onclick="setColorTheme('sunset')">
+                            <span class="swatch-color" style="background: linear-gradient(135deg, #f97316, #f43f5e);"></span>
+                            <span class="swatch-name">Sunset</span>
+                        </button>
+                        <button type="button" class="palette-swatch emerald" title="Emerald Matrix" onclick="setColorTheme('emerald')">
+                            <span class="swatch-color" style="background: linear-gradient(135deg, #10b981, #06b6d4);"></span>
+                            <span class="swatch-name">Emerald</span>
+                        </button>
+                        <button type="button" class="palette-swatch gold" title="Midnight Gold" onclick="setColorTheme('gold')">
+                            <span class="swatch-color" style="background: linear-gradient(135deg, #f59e0b, #ec4899);"></span>
+                            <span class="swatch-name">Gold</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
             <!-- SECTION: BASIC INFO -->
             <div class="form-section">
@@ -344,8 +414,11 @@
                 <h4>6. Contact & Social Links</h4>
                 
                 <div class="input-group">
-                    <label>Contact Email</label>
+                    <label>Contact Email (Receives Real Form Messages)</label>
                     <input type="email" id="input-email" placeholder="e.g. [email protected]" oninput="updateLivePortfolio()">
+                    <small style="color: var(--primary-light); display: block; margin-top: 5px; font-size: 11px; line-height: 1.4;">
+                        📩 Contact form messages will be delivered directly to this real email address!
+                    </small>
                 </div>
 
                 <div class="input-group">
@@ -371,9 +444,6 @@
         </div>
 
         <div class="drawer-footer">
-            <button class="btn secondary-btn" onclick="clearAllInputsToPlaceholders()">
-                <i class="fa-solid fa-eraser"></i> Clear to Examples
-            </button>
             <button class="btn" onclick="saveAndCloseDrawer()">
                 <i class="fa-solid fa-check"></i> Save & Done
             </button>
